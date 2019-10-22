@@ -1,5 +1,6 @@
 package com.example.myfirstapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         myToast.show()
     }
 
-   fun countMe(view: View){
+    fun countMe(view: View){
         //Get the text view to update
        val showCountTextView = findViewById<TextView>(R.id.textView)
 
@@ -34,6 +35,30 @@ class MainActivity : AppCompatActivity() {
        showCountTextView.text = count.toString()
 
 
-   }
+    }
+
+    fun randomMe(view: View){
+
+        // Create an Intent to start the second activity
+        val randomIntent = Intent(this, SecondActivity::class.java)
+
+
+        //Get the text view value of counter
+        val showCountTextView = findViewById<TextView>(R.id.textView)
+
+
+        //Get the val of showCountTextView
+        val countString = showCountTextView.text.toString()
+
+        //get count from countMe
+        val count = Integer.parseInt(countString)
+
+        //add count to random intent
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT, count)
+
+        // Start the new activity.
+        startActivity(randomIntent)
+
+    }
 
 }

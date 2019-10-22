@@ -62,7 +62,8 @@
         android:background="@color/buttonBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:onClick="randomMe"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
